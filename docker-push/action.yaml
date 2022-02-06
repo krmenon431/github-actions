@@ -1,0 +1,39 @@
+name: 'Docker Action'
+description: 'Build docker iamge and push to registry'
+inputs:
+  docker_file_name:
+    description: 'File name of the docker file'
+    required: false
+    default: 'Dockerfile'
+  docker-file-path:
+    description: 'Path to the docker file'
+    required: false
+    default: '.'
+  image-name:
+    description: 'Docker iamge name'
+    required: true
+    default: ''
+  image-tag:
+    description: 'Docker iamge tag'
+    required: false
+    default: 'latest'
+  registry:
+    description: 'Docker registry name'
+    required: true
+    default: ''
+  registry-username:
+    description: 'Docker registry username'
+    required: true
+    default: ''
+  registry-password:
+    description: 'Docker registry username'
+    required: true
+    default: ''
+outputs:
+  time: # id of output
+    description: 'Docker image pushed to registry'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.docker_file_name }}
