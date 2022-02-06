@@ -5,27 +5,27 @@ inputs:
     description: 'File name of the docker file'
     required: false
     default: 'Dockerfile'
-  docker-file-path:
-    description: 'Path to the docker file'
+  app_root_path:
+    description: 'Path to the docker file and application'
     required: false
     default: '.'
-  image-name:
+  image_name:
     description: 'Docker iamge name'
     required: true
     default: ''
-  image-tag:
+  image_tag:
     description: 'Docker iamge tag'
     required: false
     default: 'latest'
   registry:
     description: 'Docker registry name'
     required: true
-    default: ''
-  registry-username:
+    default: 'https://index.docker.io/v1/'
+  registry_username:
     description: 'Docker registry username'
     required: true
     default: ''
-  registry-password:
+  registry_password:
     description: 'Docker registry username'
     required: true
     default: ''
