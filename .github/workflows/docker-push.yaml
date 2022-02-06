@@ -1,0 +1,18 @@
+name: Docker push
+
+on:
+  workflow_dispatch:
+    inputs:
+      docker_file_name:
+        description: 'docker_file_name'
+        required: true
+        default: 'Dockerfile'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: yaml-lint
+      uses: krmenon431/github-actions/docker-push@main
