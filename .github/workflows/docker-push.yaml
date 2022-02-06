@@ -5,14 +5,13 @@ on:
     inputs:
       docker_file_name:
         description: 'docker_file_name'
-        required: true
-        default: 'Dockerfile'
+        required: false
 
 jobs:
-  lint:
+  docker-push:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
-    - name: yaml-lint
+    - name: docker-build-login-push
       uses: krmenon431/github-actions/docker-push@main
